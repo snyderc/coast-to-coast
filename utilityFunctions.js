@@ -203,6 +203,9 @@ function loadImages(imageUrlArray, imageLoadedArray, callback) {
 
 // Draw Elements on Screen
 
+function drawImage(image) {
+    ctx.drawImage(images[image.url], image.x, image.y);
+}
 function drawRectangle(rect) {
     // rect.clicked means it's disabled and shows as all black (mostly for the equation buttons)
     if (rect.clicked) {
@@ -215,7 +218,7 @@ function drawRectangle(rect) {
         ctx.strokeRect(rect.x, rect.y, rect.width, rect.height);
         // If button has a label, draw the text label too
         if (rect.value) {
-            ctx.font = "30px Arial";
+            ctx.font = "30px Roboto";
             ctx.fillStyle = "black";
             ctx.textAlign = "center";
             if (ctx.textAlign === "left") {
@@ -229,7 +232,7 @@ function drawRectangle(rect) {
 }
 
 function drawText(text) {
-    ctx.font = "30px Arial";
+    ctx.font = "30px Roboto";
     ctx.fillStyle = "black";
     ctx.textAlign = "center";
     ctx.fillText(text.value, text.x, text.y);
@@ -239,7 +242,7 @@ function drawTextDisplayArea() {
     ctx.strokeStyle = "black";
     ctx.strokeRect(100, 10, 700, 190);
 
-    // ctx.font = "30px Arial";
+    // ctx.font = "30px Roboto";
     // ctx.fillStyle = "black";
     // ctx.textAlign="center";
     // ctx.fillText("Coast to Coast", 450, 40);
@@ -261,7 +264,7 @@ function drawRestStops() {
         if (i % 2 === 0) {
             ctx.drawImage(images['/images/road-rest-stop.png'], restStopTileXBase, restStopTileYBase+(i*restStopYOffset));
             ctx.drawImage(images['/images/house.png'], restStopHouseXBase, restStopHouseYBase+(i*restStopYOffset));
-            ctx.font = "18px Arial";
+            ctx.font = "18px Roboto";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             const textToDisplay = i*10;
@@ -271,7 +274,7 @@ function drawRestStops() {
         else {
             ctx.drawImage(images['/images/road-rest-stop.png'], restStopTileXBase+oddRestStopXOffset, restStopTileYBase+(i*restStopYOffset));
             ctx.drawImage(images['/images/house.png'], restStopHouseXBase+oddRestStopXOffset, restStopHouseYBase+(i*restStopYOffset));
-            ctx.font = "18px Arial";
+            ctx.font = "18px Roboto";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
             const textToDisplay = i*10;
@@ -302,7 +305,7 @@ function drawRoadTiles() {
                 const colXCoordOffset = 80;
                 const key = (row * 10) + (col + 1);
                 // Align the position # centered (x pos of road + 40) and offset 35 from the top of the tile
-                ctx.font = "18px Arial";
+                ctx.font = "18px Roboto";
                 ctx.fillStyle = "white";
                 ctx.textAlign = "center";
                 ctx.fillText(key, colXCoordBase+(colXCoordOffset*col)+40, rowYCoord+35);
@@ -316,7 +319,7 @@ function drawRoadTiles() {
                 const colXCoordOffset = 80;
                 const key = (row * 10) + (colStart - col);
                 // Align the position # centered (x pos of road + 40) and offset 35 from the top of the tile
-                ctx.font = "18px Arial";
+                ctx.font = "18px Roboto";
                 ctx.fillStyle = "white";
                 ctx.textAlign = "center";
                 ctx.fillText(key, colXCoordBase+(colXCoordOffset*col)+40, rowYCoord+35);
@@ -336,7 +339,7 @@ function drawShortcuts() {
     ctx.lineTo(535, 327);
     ctx.stroke();
 
-    ctx.font = "14px Arial";
+    ctx.font = "14px Roboto";
     ctx.fillStyle = "black";
     ctx.textAlign="center";
     ctx.fillText("Shortcut", 490, 300);
@@ -347,7 +350,7 @@ function drawShortcuts() {
     ctx.lineTo(453, 486);
     ctx.stroke();
 
-    ctx.font = "14px Arial";
+    ctx.font = "14px Roboto";
     ctx.fillStyle = "black";
     ctx.textAlign="center";
     ctx.fillText("Shortcut", 490, 460);
@@ -399,6 +402,9 @@ function drawScreen() {
         }
         else if (gameVars.textAndButtonsToDraw[i].type === "rectangle") {
             drawRectangle(gameVars.textAndButtonsToDraw[i]);
+        }
+        else if (gameVars.textAndButtonsToDraw[i].type === "image") {
+            drawImage(gameVars.textAndButtonsToDraw[i]);
         }
     }
 }

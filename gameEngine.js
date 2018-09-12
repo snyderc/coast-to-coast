@@ -133,6 +133,8 @@ function showStartGameButton() {
     // Draw Coast to Coast name and start game button
     gameVars.textAndButtonsToDraw.push(messages.coastToCoastName);
     gameVars.textAndButtonsToDraw.push(messages.startGameButton);
+    gameVars.textAndButtonsToDraw.push(messages.startGameRedCarDecoration);
+    gameVars.textAndButtonsToDraw.push(messages.startGameBlueCarDecoration);
     gameVars.textAndButtonsToDraw.push(messages.rules1);
     gameVars.textAndButtonsToDraw.push(messages.rules2);
     gameVars.textAndButtonsToDraw.push(messages.rules3);

@@ -26,6 +26,18 @@ const messages = {
             return initializeGame();
         }
     },
+    startGameRedCarDecoration: {
+        type: "image",
+        x: 220,
+        y: 80,
+        url: "/images/car-right-red.png"
+    },
+    startGameBlueCarDecoration: {
+        type: "image",
+        x: 600,
+        y: 80,
+        url: "/images/car-left-blue.png"
+    },
     rules1: {
         type: "text",
         x: 450,
