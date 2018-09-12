@@ -8,13 +8,13 @@ const messages = {
     coastToCoastName: {
         type: "text",
         x: 450,
-        y: 250,
+        y: 100,
         value: "Coast to Coast"
     },
     startGameButton: {
         type: "rectangle",
         x: 300,
-        y: 300,
+        y: 150,
         width: 300,
         height: 80,
         value: "Click to Start Game",
@@ -25,6 +25,42 @@ const messages = {
             // requestUserName(); // Not asking user for their name in version 1 of game
             return initializeGame();
         }
+    },
+    rules1: {
+        type: "text",
+        x: 450,
+        y: 350,
+        value: "How to Play:"
+    },
+    rules2: {
+        type: "text",
+        x: 450,
+        y: 400,
+        value: "Create an equation that moves your car along the board!"
+    },
+    rules3: {
+        type: "text",
+        x: 450,
+        y: 440,
+        value: "Land on a rest stop and go ahead another rest stop!"
+    },
+    rules4: {
+        type: "text",
+        x: 450,
+        y: 480,
+        value: "Land on another player not at a rest stop"
+    },
+    rules5: {
+        type: "text",
+        x: 450,
+        y: 520,
+        value: "and bump them back two rest stops!"
+    },
+    rules6: {
+        type: "text",
+        x: 450,
+        y: 560,
+        value: "Land right on the rest stop at position 50 to win!"
     },
     whatIsYourNameText: {
         type: "text",
