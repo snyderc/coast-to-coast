@@ -2,6 +2,8 @@
 
 Coast to Coast is a remake of the Apple IIe game "How the West Was One + Three X Four" which taught grade school students how to remember mathematical order of operations.
 
+A live demo is available at http://coast-to-coast.snyderc.me/
+
 ## Installing
 
 Coast to Coast is a JavaScript game and will run in a modern web browser that supports async/await. Open game.html to begin playing. The game uses several JavaScript files, listed in index.html, and uses the images in the "images" folder.
