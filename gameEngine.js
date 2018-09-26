@@ -130,17 +130,15 @@ function loadAssets() {
 }
 
 function showStartGameButton() {
-    // Draw Coast to Coast name and start game button
-    gameVars.textAndButtonsToDraw.push(messages.coastToCoastName);
-    gameVars.textAndButtonsToDraw.push(messages.startGameButton);
-    gameVars.textAndButtonsToDraw.push(messages.startGameRedCarDecoration);
-    gameVars.textAndButtonsToDraw.push(messages.startGameBlueCarDecoration);
-    gameVars.textAndButtonsToDraw.push(messages.rules1);
-    gameVars.textAndButtonsToDraw.push(messages.rules2);
-    gameVars.textAndButtonsToDraw.push(messages.rules3);
-    gameVars.textAndButtonsToDraw.push(messages.rules4);
-    gameVars.textAndButtonsToDraw.push(messages.rules5);
-    gameVars.textAndButtonsToDraw.push(messages.rules6);
+    gameVars.textAndButtonsToDraw.push(messages.splashScreen);
+    // Add click event listener to canvas
+    canvas.addEventListener('click', clickListenerCallback);
+    // Draw text/buttons
+    window.requestAnimationFrame(drawScreen);
+}
+
+function showRules() {
+    gameVars.textAndButtonsToDraw.push(messages.rulesScreen);
     // Add click event listener to canvas
     canvas.addEventListener('click', clickListenerCallback);
     // Draw text/buttons

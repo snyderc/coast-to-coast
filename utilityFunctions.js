@@ -105,7 +105,9 @@ const imageUrls = [
     '/images/car-right-red.png',
     '/images/house.png',
     '/images/road-piece.png',
-    '/images/road-rest-stop.png'
+    '/images/road-rest-stop.png',
+    '/images/splash-screen.png',
+    '/images/rules.png'
 ];
 
 // Initialize coordinates of where to draw cars for each position

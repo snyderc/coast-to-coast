@@ -11,68 +11,33 @@ const messages = {
         y: 100,
         value: "Coast to Coast"
     },
-    startGameButton: {
-        type: "rectangle",
-        x: 300,
-        y: 150,
-        width: 300,
-        height: 80,
-        value: "Click to Start Game",
+    splashScreen: {
+        type: "image",
+        x: 0,
+        y: 0,
+        width: 900,
+        height: 680,
+        url: '/images/splash-screen.png',
         onClick: function() {
             canvas.removeEventListener("click", clickListenerCallback);
             gameVars.textAndButtonsToDraw.length = 0;
             window.requestAnimationFrame(drawScreen);
-            // requestUserName(); // Not asking user for their name in version 1 of game
-            return initializeGame();
+            return showRules();
         }
     },
-    startGameRedCarDecoration: {
+    rulesScreen: {
         type: "image",
-        x: 220,
-        y: 80,
-        url: "/images/car-right-red.png"
-    },
-    startGameBlueCarDecoration: {
-        type: "image",
-        x: 600,
-        y: 80,
-        url: "/images/car-left-blue.png"
-    },
-    rules1: {
-        type: "text",
-        x: 450,
-        y: 350,
-        value: "How to Play:"
-    },
-    rules2: {
-        type: "text",
-        x: 450,
-        y: 400,
-        value: "Create an equation that moves your car along the board!"
-    },
-    rules3: {
-        type: "text",
-        x: 450,
-        y: 440,
-        value: "Land on a rest stop and go ahead another rest stop!"
-    },
-    rules4: {
-        type: "text",
-        x: 450,
-        y: 480,
-        value: "Land on another player not at a rest stop"
-    },
-    rules5: {
-        type: "text",
-        x: 450,
-        y: 520,
-        value: "and bump them back two rest stops!"
-    },
-    rules6: {
-        type: "text",
-        x: 450,
-        y: 560,
-        value: "Land right on the rest stop at position 50 to win!"
+        x: 0,
+        y: 0,
+        width: 900,
+        height: 680,
+        url: '/images/rules.png',
+        onClick: function() {
+            canvas.removeEventListener("click", clickListenerCallback);
+            gameVars.textAndButtonsToDraw.length = 0;
+            window.requestAnimationFrame(drawScreen);
+            return initializeGame();
+        }
     },
     whatIsYourNameText: {
         type: "text",
